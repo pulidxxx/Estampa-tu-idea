@@ -156,6 +156,7 @@ function Catalogo() {
       </div>
     </Col>
   ));
+
   const CartasEstampables = estampablesData.map((data) => (
     <Col
       key={data.id}
@@ -316,7 +317,8 @@ function Catalogo() {
           {" "}
           {CartasDeportivas}{" "}
         </Row>
-        <div className="align-self-start ps-5 pt-5 mb-5">
+        {/* Descomentar */}
+        {/* <div className="align-self-start ps-5 pt-5 mb-5">
           <h1 data-testid="Camisas para estampar">Camisas para estampar: </h1>
         </div>
         <Row
@@ -327,7 +329,7 @@ function Catalogo() {
           }}
         >
           {CartasEstampables}
-        </Row>
+        </Row> */}
 
         <ThemeSwitcher />
         <Offcanvas show={show} onHide={handleClose} placement="end">

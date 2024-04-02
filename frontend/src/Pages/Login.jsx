@@ -28,7 +28,10 @@ function Login() {
 
   const loadCliente = async (email) => {
     try {
-      let tipoUsuario = document.querySelector("#tipoUsuario").value;
+      // Descomentar
+      // Reemplazar la linea let tipoUsuario = 'Cliente'; por la linea de codigo que esta comentada abajo
+      // let tipoUsuario = document.querySelector("#tipoUsuario").value;
+      let tipoUsuario = "Cliente";
       if (tipoUsuario) {
         if (cliente.email.length > 45) {
           setAlertText("El correo es mayor a 45 caracteres");
@@ -135,6 +138,7 @@ function Login() {
           <Image src="/logo.png" fluid width="50%" />
         </Form.Group>
         <Form onSubmit={handleFormSubmit} data-testid="Form">
+          {/* Descomentar
           <Form.Group className="mb-3" controlId="tipoUsuario">
             <Form.Select
               aria-label="Default select example"
@@ -145,7 +149,7 @@ function Login() {
               <option value="Cliente">Cliente</option>
               <option value="Artista">Artista</option>
             </Form.Select>
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control

@@ -108,13 +108,13 @@ function Carrito() {
 
   const restarCantidad = async (material, cantidad) => {
     fetch("http://localhost:4000/updateQuantity", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          material: material,
-          cantidad: cantidad,
-        }),
-      });
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        material: material,
+        cantidad: cantidad,
+      }),
+    });
   };
 
   const verificarDinero = () => {
@@ -223,6 +223,7 @@ function Carrito() {
                   {mostrarPrecioTotal()}
                   <p>(Incluye iva del {IVA * 100}%)</p>
 
+                  {/* Descomentar
                   <Button
                     disabled={verificarDinero()}
                     onClick={calcularTotal}
@@ -231,7 +232,7 @@ function Carrito() {
                     <Link to={"/interfazPago"} className="btn p-0 m-0">
                       {dirigirAPago()}
                     </Link>
-                  </Button>
+                  </Button> */}
                 </Card.Body>
               </Card>
             </Col>

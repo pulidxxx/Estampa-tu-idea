@@ -16,7 +16,10 @@ function Registro() {
     nombre: "",
     email: "",
     password: "",
-    tipoCliente: "",
+    // Descomentar
+    // Cambiar el tipo de cliente por esta linea:
+    // tipoCliente: "",
+    tipoCliente: "Cliente",
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -115,6 +118,7 @@ function Registro() {
             <Image src="/logo.png" fluid width="50%" />
           </Form.Group>
 
+          {/* Descomentar
           <Form.Group className="mb-3" controlId="formBasicTipo">
             <Form.Select
               aria-label="Default select example"
@@ -126,7 +130,7 @@ function Registro() {
               <option value="Artista">Artista</option>
             </Form.Select>
             <Form.Text>¿Bajo qué rol deseas registrate?.</Form.Text>
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group className="mb-3" controlId="formBasicUsername">
             <Form.Control

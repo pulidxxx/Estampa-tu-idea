@@ -88,6 +88,7 @@ function Header() {
                   variant="pills"
                   className="justify-content-end flex-grow-1 pe-3"
                 >
+                  {/* Descomentar
                   <Nav.Item>
                     <Nav.Link>
                       🤑 Dinero:{" "}
@@ -96,7 +97,7 @@ function Header() {
                         value,
                       })}
                     </Nav.Link>
-                  </Nav.Item>
+                  </Nav.Item> */}
 
                   <Nav.Item>
                     <Nav.Link>
@@ -112,6 +113,7 @@ function Header() {
                       <FontAwesomeIcon icon={faShop} /> Catalogo
                     </Nav.Link>
                   </Nav.Item>
+                  {/* Descomentar
                   <Nav.Item>
                     <Nav.Link
                       as={Link}
@@ -120,7 +122,7 @@ function Header() {
                     >
                       <FontAwesomeIcon icon={faStar} /> Estampados
                     </Nav.Link>
-                  </Nav.Item>
+                  </Nav.Item> */}
                   <Nav.Item>
                     <Nav.Link
                       as={Link}
