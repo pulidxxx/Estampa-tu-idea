@@ -14,15 +14,16 @@ con el cliente que tiene limites de cantidad y de presupuesto
 
 ### Pasos para importar el proyecto
 
-- Despues de ejecutar Github desktop, clonar el repositorio del link https://github.com/pulidxxx/Pagina-de-compra-de-camisas , o usar el que esta en la carpeta con este README
+- Despues de ejecutar Github desktop, clonar el repositorio del link https://github.com/pulidxxx/Estampa-tu-idea , o usar el que esta en la carpeta con este README
 - Abrirlo en Visual Studio Code
-- Crear una terminal y escribir el comando "npm i"
+- Crear una terminal y escribir el comando "npm i" en la direccion del proyecto
+- Luego de que se instalen los paquetes escrbir "cd backend" y luego escribir "npm i"
 - Crear una nueva terminal (sin cerrar la anterior), escribir el comando "cd frontend" y escribir el comando "npm i"
 - Luego abrir pgAdmin crear una base de datos llamada "PaginaDeCamisasBD"
 - Darle click derecho a la Base de datos > Restore, y seleccionar el archivo llamado "backup.sql" que esta ubicado dentro de la carpeta "database"
 - Luego abrir el archivo que se llama "config.js" dentro de la carpeta "src" y cambiarle las credenciales para conectar la base de datos
 - Guardar los cambios
-- Escribir "npm run dev" en cada una de las terminales
+- Escribir "npm run dev" en cada una de las dos terminales
 
 ### Pasos para correr las pruebas
 
