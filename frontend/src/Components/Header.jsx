@@ -46,11 +46,7 @@ function Header() {
   };
 
   const reset = () => {
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
-    localStorage.removeItem("itemData");
-    localStorage.removeItem("precioTotal");
-    localStorage.removeItem("dinero");
+    localStorage.clear();
     navigate("/login");
     window.location.reload();
   };
@@ -76,7 +72,7 @@ function Header() {
                 height="35"
                 className="d-inline-block align-top"
               />
-              WaySoft
+              Estampa Tu Idea
             </Navbar.Brand>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-md`}
@@ -88,7 +84,6 @@ function Header() {
                   variant="pills"
                   className="justify-content-end flex-grow-1 pe-3"
                 >
-                  {/* Descomentar
                   <Nav.Item>
                     <Nav.Link>
                       🤑 Dinero:{" "}
@@ -97,7 +92,7 @@ function Header() {
                         value,
                       })}
                     </Nav.Link>
-                  </Nav.Item> */}
+                  </Nav.Item>
 
                   <Nav.Item>
                     <Nav.Link>
@@ -113,7 +108,6 @@ function Header() {
                       <FontAwesomeIcon icon={faShop} /> Catalogo
                     </Nav.Link>
                   </Nav.Item>
-                  {/* Descomentar
                   <Nav.Item>
                     <Nav.Link
                       as={Link}
@@ -122,7 +116,7 @@ function Header() {
                     >
                       <FontAwesomeIcon icon={faStar} /> Estampados
                     </Nav.Link>
-                  </Nav.Item> */}
+                  </Nav.Item>
                   <Nav.Item>
                     <Nav.Link
                       as={Link}
@@ -163,7 +157,7 @@ function Header() {
                 height="35"
                 className="d-inline-block align-top"
               />
-              WaySoft
+              Estampa Tu Idea
             </Navbar.Brand>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-md`}
@@ -229,7 +223,7 @@ function Header() {
                 height="35"
                 className="d-inline-block align-top"
               />
-              WaySoft
+              Estampa Tu Idea
             </Navbar.Brand>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-md`}
@@ -241,6 +235,24 @@ function Header() {
                   variant="pills"
                   className="justify-content-end flex-grow-1 pe-3"
                 >
+                  <Nav.Item>
+                    <Nav.Link
+                      as={Link}
+                      to="/"
+                      active={location.pathname === "/"}
+                    >
+                      <FontAwesomeIcon icon={faShop} /> Catalogo
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link
+                      as={Link}
+                      to="/catalogoEstampado"
+                      active={location.pathname === "/catalogoEstampado"}
+                    >
+                      <FontAwesomeIcon icon={faStar} /> Estampados
+                    </Nav.Link>
+                  </Nav.Item>
                   <NavDropdown
                     title={user()}
                     id={`offcanvasNavbarDropdown-expand-md`}

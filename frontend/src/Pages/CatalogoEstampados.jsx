@@ -1,42 +1,43 @@
-  /* React-Bootstrap */
+/* React-Bootstrap */
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 
-  /* My components */
-import Carta from "../Components/Carta";
+/* My components */
+//import ComponentCarta from "../Components/ComponentCarta";
 import Footer from "../Components/Footer";
-import Header from "../Components/Header";
+import Header from "../Classes/Header/Header";
 import ThemeSwitcher from "../Components/ThemeSwitcher";
+import CartaComponent from "../Components/ComponentCarta";
 
-  /* My css */
+/* My css */
 import "../Styles/Offcanvas.css";
 
-  /* Hooks */
-  import { useState, useEffect } from "react";
+/* Hooks */
+import { useState, useEffect } from "react";
 
 function CatalogoEstampados() {
-
   const [estampados, setEstampados] = useState([]);
 
   useEffect(() => {
     // Llamar al endpoint para obtener los estampados
-    fetch('http://localhost:4000/getEstampados') // Asegúrate de que la ruta sea correcta según tu configuración de servidor
-      .then(response => response.json())
-      .then(data => {
-        if(data.rowCount!=0){
+    fetch("http://localhost:4000/getEstampados") // Asegúrate de que la ruta sea correcta según tu configuración de servidor
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.rowCount != 0) {
           setEstampados(data); // Establecer los estampados en el estado local
-        }else{
-          console.log("no hay estampados")
-          console.log(estampados.length)
+        } else {
+          console.log("no hay estampados");
+          console.log(estampados.length);
         }
       })
-      .catch(error => {
-        console.error('Error al obtener los estampados:', error);
+      .catch((error) => {
+        console.error("Error al obtener los estampados:", error);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // La dependencia vacía asegura que esta llamada solo se haga una vez al cargar el componente
 
-  const Cartas = estampados.map((data, index) => (
+  const Cartas = (estampados.map((data, index) => 
     <Col
       key={index}
       xs="12"
@@ -46,8 +47,11 @@ function CatalogoEstampados() {
       className="text-center mt-3"
       // Agregar lógica de clic aquí si es necesario
     >
-        <Carta img={data.diseño} text={data.nombre} artista={data.nombre_artista} />
-   
+      <CartaComponent
+        img={data.diseño}
+        text={data.nombre}
+        artista={data.nombre_artista}
+      />
     </Col>
   ));
 
@@ -67,7 +71,7 @@ function CatalogoEstampados() {
               <Col>
                 <br />
                 <br />
-                <h1>Waysoft</h1>
+                <h1>Estampa Tu Idea</h1>
                 <br />
                 <h3>Los mejores precios!</h3>
                 <br />
@@ -80,11 +84,13 @@ function CatalogoEstampados() {
         <div className="align-self-start ps-5 pt-5">
           <h1>Estampados: </h1>
         </div>
-        <Row className="align-items-center">{estampados.length > 0 ? (
-              Cartas
-            ) : (
-              <p className="h2">No hay estampados disponibles</p>
-            )} </Row>
+        <Row className="align-items-center">
+          {estampados.length > 0 ? (
+            Cartas
+          ) : (
+            <p className="h2">No hay estampados disponibles</p>
+          )}{" "}
+        </Row>
 
         <ThemeSwitcher />
         <br />
